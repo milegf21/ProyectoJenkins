@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     stages {
-        stage ('checkout') {
+        stage ('Obtener fuentes') {
 
             steps {
  
@@ -10,13 +10,13 @@ pipeline {
             
             }
         }
-        stage ('Stacti code analisys') {
+        stage ('Analisis de codigo') {
             steps {
                     echo 'Stacti code analisys'
              
             }
         }
-         stage ('Build') {
+         stage ('Construir') {
             steps {
                     echo 'Build'
              
