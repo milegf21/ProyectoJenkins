@@ -1,0 +1,19 @@
+# Datasource configuration in heroku environment
+server:
+  port: 8080
+  
+spring:
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+      
+  datasource:
+    url: jdbc:postgresql://ec2-50-16-196-57.compute-1.amazonaws.com:5432/daph3gch1rvdpm?ssl=true&sslfactory=org.postgresql.ssl.NonValidatingFactory
+   
+    driver-class-name: org.postgresql.Driver
+    username: cruxzgyqkpcofs
+    password: 279ae9263104c3fa0d325cd77a4f138068e3086bd264dcc61aefd1abb027a8a8
