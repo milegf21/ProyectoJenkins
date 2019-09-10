@@ -12,7 +12,13 @@ pipeline {
         }
         stage ('Analisis de codigo') {
             steps {
-                    echo 'Stacti code analisys'
+                    echo 'Static code analisys'
+             
+            }
+        }
+         stage ('verificar archivo') {
+            steps {
+                   fileExists 'pom.xml'
              
             }
         }
