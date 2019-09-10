@@ -2,19 +2,23 @@ pipeline {
     agent any
 
     stages {
-        stage ('Compile Stage') {
+        stage ('checkout') {
 
             steps {
  
-                    sh 'mvn clean compile'
+                    checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: '32a9bb40-61d9-48d3-9499-163692fae423', url: 'https://github.com/milegf21/ProyectoJenkins.git']]])
             
             }
         }
-
-
-        stage ('Deployment Stage') {
+        stage ('Stacti code analisys') {
             steps {
-                    sh 'mvn deploy'
+                    echo 'Stacti code analisys'
+             
+            }
+        }
+         stage ('Build') {
+            steps {
+                    echo 'Build'
              
             }
         }
