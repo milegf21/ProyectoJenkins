@@ -2,24 +2,13 @@ pipeline {
     agent any
 
     stages {
-        stage ('Compile Stage') {
+        stage ('checkout-git') {
 
             steps {
-                withMaven(maven : 'maven-3.6.0') {
-                    sh 'mvn clean compile'
+               git poll:true, url:'https://github.com/milegf21/ProyectoJenkins.git'
                 }
             }
         }
-
-        stage ('Testing Stage') {
-
-            steps {
-                withMaven(maven : 'maven-3.6.0') {
-                    sh 'mvn test'
-                }
-            }
-        }
-
 
         stage ('Deployment Stage') {
             steps {
