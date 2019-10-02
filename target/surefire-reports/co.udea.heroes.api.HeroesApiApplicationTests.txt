@@ -1,7 +1,0 @@
--------------------------------------------------------------------------------
-Test set: co.udea.heroes.api.HeroesApiApplicationTests
--------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 6.631 s <<< FAILURE! - in co.udea.heroes.api.HeroesApiApplicationTests
-initializationError(co.udea.heroes.api.HeroesApiApplicationTests)  Time elapsed: 0.015 s  <<< ERROR!
-java.lang.IllegalStateException: Unable to find a @SpringBootConfiguration, you need to use @ContextConfiguration or @SpringBootTest(classes=...) with your test
-
