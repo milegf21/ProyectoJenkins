@@ -12,7 +12,7 @@ pipeline {
         }
         stage ('test') {
             steps {
-                    junit 'ProyectoControllerIntegracion.java'
+                     junit '**/target/surefire-reports/*.xml'
              
             }
         }
