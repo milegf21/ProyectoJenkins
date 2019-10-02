@@ -12,7 +12,7 @@ pipeline {
         }
         stage ('test') {
             steps {
-                    junit '\\bin\\src\\test'
+                    junit 'ProyectoControllerIntegracion.java'
              
             }
         }
