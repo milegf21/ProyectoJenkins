@@ -12,7 +12,7 @@ pipeline {
         }
         stage ('test') {
             steps {
-                    echo 'Static code analisys'
+                    junit '\\bin\\src\\test'
              
             }
         }
