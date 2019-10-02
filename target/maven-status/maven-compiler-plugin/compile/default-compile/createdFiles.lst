@@ -1,0 +1,16 @@
+co\udea\proyecto\api\ProyectoApiApplication.class
+co\udea\proyecto\api\service\ProyectoService.class
+co\udea\proyecto\api\exception\GeneralException.class
+co\udea\proyecto\api\config\CORSFilter.class
+co\udea\proyecto\api\dto\DTOProyecto.class
+co\udea\proyecto\api\repository\ProyectoRepository.class
+co\udea\proyecto\api\controller\ProyectoController.class
+co\udea\proyecto\api\model\Proyecto.class
+co\udea\proyecto\api\model\Usuario.class
+co\udea\proyecto\api\service\impl\ProyectoServiceImpl.class
+co\udea\proyecto\api\exception\DataNotFoundException.class
+co\udea\proyecto\api\util\Messages.class
+co\udea\proyecto\api\config\SwaggerConfig.class
+co\udea\proyecto\api\model\Reconocimientos.class
+co\udea\proyecto\api\mapping\proyectoMapper.class
+co\udea\proyecto\api\model\Actividad.class
