@@ -10,19 +10,25 @@ pipeline {
             
             }
         }
-        stage ('Analisis de codigo') {
+        stage ('test') {
             steps {
                     echo 'Static code analisys'
              
             }
         }
-         stage ('verificar archivo') {
+         stage ('metricas') {
             steps {
                    fileExists 'pom.xml'
              
             }
         }
-         stage ('Construir') {
+         stage ('repositorio de activos') {
+            steps {
+                    echo 'Build'
+             
+            }
+        }
+        stage ('despliegue') {
             steps {
                     echo 'Build'
              
