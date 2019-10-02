@@ -2,30 +2,36 @@ pipeline {
     agent any
 
     stages {
-        stage ('Compile Stage') {
+        stage ('Obtener fuentes') {
 
             steps {
-                withMaven(maven : 'maven_3_5_0') {
-                    sh 'mvn clean compile'
-                }
+ 
+                    checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: '32a9bb40-61d9-48d3-9499-163692fae423', url: 'https://github.com/milegf21/ProyectoJenkins.git']]])
+            
             }
         }
-
-        stage ('Testing Stage') {
-
+        stage ('test') {
             steps {
-                withMaven(maven : 'maven_3_5_0') {
-                    sh 'mvn test'
-                }
+                    junit 'ProyectoControllerIntegracion.java'
+             
             }
         }
-
-
-        stage ('Deployment Stage') {
+         stage ('metricas') {
             steps {
-                withMaven(maven : 'maven_3_5_0') {
-                    sh 'mvn deploy'
-                }
+                   fileExists 'pom.xml'
+             
+            }
+        }
+         stage ('repositorio de activos') {
+            steps {
+                    echo 'Build'
+             
+            }
+        }
+        stage ('despliegue') {
+            steps {
+                    echo 'Build'
+             
             }
         }
     }
