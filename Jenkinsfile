@@ -2,15 +2,7 @@ pipeline {
     agent any
     
     stages {
-   stage ('install') {
-       //environment {
-         //   mvnHome= tool name: 'maven-3.6.0', type: 'maven'
-       //}
-           // steps {
-               // mvnHome= tool name: 'maven-3.6.0', type: 'maven'
-                 //sh "${mvnHome}/bin/mvn package"  
-            //}
-       // }
+ 
         stage ('Obtener fuentes') {
 
             steps {
