@@ -18,9 +18,10 @@ pipeline {
         }
          stage ('metricas') {
             steps {
-                 withSonarQubeEnv {
+                 //withSonarQubeEnv {
 				    // some block
-				}
+		//		}
+		     echo 'Build
             }
         }
          stage ('repositorio de activos') {
