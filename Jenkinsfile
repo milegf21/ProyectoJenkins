@@ -25,9 +25,9 @@ pipeline {
             steps {
                    // sh 'mvn sonar:sonar' 
                    // echo 'Build'
-                
+                def mvnHome =tool name: 'maven-3.6.0', type: 'maven'
                     withSonarQubeEnv('SonarQube') {
-                      sh "${scannerHome}/tools/hudson.plugins.sonar.SonarRunnerInstallation/SonarQubeScanner/bin/sonar-scanner.bat"
+                      sh "${mvnHome}/bin/mvn sonar:sonar"
                     }
              
             }
