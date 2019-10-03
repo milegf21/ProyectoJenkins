@@ -5,14 +5,14 @@ pipeline {
    stage ('install') {
 
             steps {
-                   tool name: 'maven-3.6.0', type: 'maven'
-                    
+                  def mvnHome= tool name: 'maven-3.6.0', type: 'maven'
+                sh "${mvnHome}/bin/mvn package"  
             }
         }
         stage ('Obtener fuentes') {
 
             steps {
- |
+ 
                     checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: '32a9bb40-61d9-48d3-9499-163692fae423', url: 'https://github.com/milegf21/ProyectoJenkins.git']]])
             
             }
