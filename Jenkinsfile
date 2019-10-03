@@ -27,15 +27,15 @@ pipeline {
                    // echo 'Build'
                 
                     withSonarQubeEnv('SonarQube') {
-                      sh "${scannerHome}/bin/sonar-scanner.bat"
+                      sh "${scannerHome}/tools/hudson.plugins.sonar.SonarRunnerInstallation/SonarQubeScanner/bin/sonar-scanner.bat"
                     }
              
             }
         }
          stage ('repositorio de activos') {
             steps {
-                   // echo 'Build'
-                    sh 'mvn deploy' 
+                   echo 'Build'
+                    //sh 'mvn deploy' 
             }
         }
         stage ('despliegue') {
