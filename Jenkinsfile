@@ -18,8 +18,9 @@ pipeline {
         }
          stage ('metricas') {
             steps {
-                   fileExists 'pom.xml'
-             
+                 withSonarQubeEnv ( ' Servidor SonarQube ' ) {
+			    	bat ' D:/Sonar/sonar-scanner-2.6.1/bin/sonar-scanner'
+			    }
             }
         }
          stage ('repositorio de activos') {
@@ -30,7 +31,7 @@ pipeline {
         }
         stage ('despliegue') {
             steps {
-                    echo 'Build'
+                   fileExists 'pom.xml'
              
             }
         }
