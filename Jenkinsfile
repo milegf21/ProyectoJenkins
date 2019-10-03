@@ -1,6 +1,9 @@
 pipeline {
     agent any
-
+    tools {
+        maven 'maven-3.6.0'
+        jdk 'Java SE 8'
+    }
     stages {
         stage ('Obtener fuentes') {
 
