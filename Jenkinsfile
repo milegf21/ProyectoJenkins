@@ -24,7 +24,7 @@ pipeline {
                  mvnHome = tool name: 'maven', type: 'maven'
                 }
             steps {
-                    sh 'mvn sonar:sonar' 
+                    bat 'mvn sonar:sonar' 
                    // echo 'Build'
                
                    // withSonarQubeEnv('SonarQube') {
@@ -35,7 +35,7 @@ pipeline {
         }
          stage ('repositorio de activos') {
             steps {
-                   echo 'Build'
+                  echo 'Build'
                     //sh 'mvn deploy' 
             }
         }
