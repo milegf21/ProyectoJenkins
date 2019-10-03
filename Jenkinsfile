@@ -24,12 +24,12 @@ pipeline {
                  mvnHome = tool name: 'maven', type: 'maven'
                 }
             steps {
-                   // sh 'mvn sonar:sonar' 
+                    sh 'mvn sonar:sonar' 
                    // echo 'Build'
                
-                    withSonarQubeEnv('SonarQube') {
-                      sh "${mvnHome}/bin/mvn sonar:sonar"
-                    }
+                   // withSonarQubeEnv('SonarQube') {
+                     // sh "${mvnHome}/bin/mvn sonar:sonar"
+                    //}
              
             }
         }
