@@ -22,14 +22,14 @@ pipeline {
         }
          stage ('metricas') {
             steps {
-                    sh 'mvn sonar:sonar' 
-             
+                   // sh 'mvn sonar:sonar' 
+                    echo 'Build'
             }
         }
          stage ('repositorio de activos') {
             steps {
-                    echo 'Build'
-             
+                   // echo 'Build'
+                    sh 'mvn deploy' 
             }
         }
         stage ('despliegue') {
