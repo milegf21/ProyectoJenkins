@@ -18,9 +18,9 @@ pipeline {
         }
          stage ('metricas') {
             steps {
-                 withSonarQubeEnv ( ' Servidor SonarQube ' ) {
-			    	bat 'D:/Sonar/sonar-scanner-2.6.1/bin/sonar-scanner'
-			    }
+                 withSonarQubeEnv {
+				    // some block
+				}
             }
         }
          stage ('repositorio de activos') {
