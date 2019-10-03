@@ -17,7 +17,12 @@ pipeline {
              
             }
         }
-        
+         stage ('metricas') {
+            steps {
+                    echo 'Build'
+             
+            }
+        }
          stage ('repositorio de activos') {
             steps {
                     echo 'Build'
