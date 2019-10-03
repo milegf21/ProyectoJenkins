@@ -5,8 +5,8 @@ pipeline {
    stage ('install') {
 
             steps {
-                    def mvnHome = tool name: 'maven-3.6.0', type: 'maven'
-                    sh "${mvnHome}/bin/mvn package"
+                   tool name: 'maven-3.6.0', type: 'maven'
+                    
             }
         }
         stage ('Obtener fuentes') {
