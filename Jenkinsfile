@@ -29,9 +29,12 @@ pipeline {
          stage ('metricas') {
             
             steps {
-                    sh 'mvn sonar:sonar' 
+                   // sh 'mvn sonar:sonar' 
                    // echo 'Build'
-               
+                 scannerHome = tool name: 'SonarQubeScanner', type: 'hudson.plugins.sonar.SonarRunnerInstallation'
+                    withSonarQubeEnv('SonarQube') {
+                      sh "${scannerHome}/bin/sonar-scanner.bat"
+                    }
              
             }
         }
