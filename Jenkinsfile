@@ -1,8 +1,6 @@
 pipeline {
     agent any
-    tools{
-     mvnHome =tool name: 'maven-3.6.0', type: 'maven'
-    }
+
     stages {
  
         stage ('Obtener fuentes') {
@@ -23,6 +21,7 @@ pipeline {
          stage ('metricas') {
             environment {
                  scannerHome = tool name: 'SonarQubeScanner', type: 'hudson.plugins.sonar.SonarRunnerInstallation'
+                 mvnHome =tool name: 'maven-3.6.0', type: 'maven'
                 }
             steps {
                    // sh 'mvn sonar:sonar' 
