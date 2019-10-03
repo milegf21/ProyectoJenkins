@@ -20,8 +20,8 @@ pipeline {
         }
          stage ('metricas') {
             environment {
-                 scannerHome = tool name: 'SonarQubeScanner', type: 'hudson.plugins.sonar.SonarRunnerInstallation'
-                 mvnHome =tool name: 'maven-3.6.0', type: 'maven'
+                 //scannerHome = tool name: 'SonarQubeScanner', type: 'hudson.plugins.sonar.SonarRunnerInstallation'
+                 mvnHome = tool name: 'maven', type: 'maven'
                 }
             steps {
                    // sh 'mvn sonar:sonar' 
