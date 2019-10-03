@@ -3,11 +3,12 @@ pipeline {
     
     stages {
    stage ('install') {
-       environment {
-            mvnHome= tool name: 'maven-3.6.0', type: 'maven'
-       }
+       //environment {
+         //   mvnHome= tool name: 'maven-3.6.0', type: 'maven'
+       //}
             steps {
-                 sh "${mvnHome}/bin/mvn package"  
+                mvnHome= tool name: 'maven-3.6.0', type: 'maven'
+                 //sh "${mvnHome}/bin/mvn package"  
             }
         }
         stage ('Obtener fuentes') {
@@ -26,15 +27,11 @@ pipeline {
             }
         }
          stage ('metricas') {
-            environment {
-                        scannerHome = tool 'SonarQubeScanner'
-                    }
+            
             steps {
-                   // sh 'mvn sonar:sonar' 
+                    sh 'mvn sonar:sonar' 
                    // echo 'Build'
-                withSonarQubeEnv('sonarqube') {
-                    sh "${scannerHome}/bin/sonar-scanner"
-                }
+               
              
             }
         }
