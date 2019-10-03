@@ -25,9 +25,18 @@ pipeline {
             }
         }
          stage ('metricas') {
+            environment {
+                        scannerHome = tool 'SonarQubeScanner'
+                    }
             steps {
                    // sh 'mvn sonar:sonar' 
-                    echo 'Build'
+                   // echo 'Build'
+                withSonarQubeEnv('sonarqube') {
+                    sh "${scannerHome}/bin/sonar-scanner"
+                }
+                timeout(time: 10, unit: 'MINUTES') {
+                    waitForQualityGate abortPipeline: true
+                }
             }
         }
          stage ('repositorio de activos') {
