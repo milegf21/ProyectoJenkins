@@ -4,8 +4,9 @@ pipeline {
         maven 'maven-3.6.0'
         jdk 'Java SE 8'
     }
+    
     stages {
-        stage ('Initialize') {
+         stage ('Initialize') {
             steps {
                 sh '''
                     echo "PATH = ${PATH}"
@@ -13,7 +14,6 @@ pipeline {
                 '''
             }
         }
-    stages {
         stage ('Obtener fuentes') {
 
             steps {
