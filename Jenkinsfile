@@ -22,7 +22,7 @@ pipeline {
         }
          stage ('metricas') {
             steps {
-                    echo 'Build'
+                    sh 'mvn sonar:sonar' 
              
             }
         }
