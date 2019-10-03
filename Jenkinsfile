@@ -3,10 +3,11 @@ pipeline {
     
     stages {
    stage ('install') {
-
+       environment {
+            mvnHome= tool name: 'maven-3.6.0', type: 'maven'
+       }
             steps {
-                   tool name: 'maven-3.6.0', type: 'maven'
-                //sh "${mvnHome}/bin/mvn package"  
+                 sh "${mvnHome}/bin/mvn package"  
             }
         }
         stage ('Obtener fuentes') {
@@ -34,9 +35,7 @@ pipeline {
                 withSonarQubeEnv('sonarqube') {
                     sh "${scannerHome}/bin/sonar-scanner"
                 }
-                timeout(time: 10, unit: 'MINUTES') {
-                    waitForQualityGate abortPipeline: true
-                }
+             
             }
         }
          stage ('repositorio de activos') {
