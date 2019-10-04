@@ -36,7 +36,7 @@ pipeline {
          stage ('repositorio de activos') {
             steps {
                   echo 'Build'
-                    //sh 'mvn deploy' 
+                    bat 'mvn deploy' 
             }
         }
         stage ('despliegue') {
