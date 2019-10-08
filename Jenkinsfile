@@ -36,7 +36,7 @@ pipeline {
          stage ('repositorio de activos') {
                environment {
                  //scannerHome = tool name: 'SonarQubeScanner', type: 'hudson.plugins.sonar.SonarRunnerInstallation'
-                 mvnHome = tool name: 'maven', type: 'maven'
+                 mvnHome = tool name: 'MAVEN', type: 'maven'
                 }
             steps {
                  // echo 'Build'
