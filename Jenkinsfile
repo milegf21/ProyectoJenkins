@@ -40,7 +40,7 @@ pipeline {
                 }
             steps {
                  // echo 'Build'
-                    bat 'mvn clean deploy' 
+                    sh 'mvn deploy' 
             }
         }
         stage ('despliegue') {
