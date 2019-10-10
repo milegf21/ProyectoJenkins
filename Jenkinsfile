@@ -42,7 +42,7 @@ pipeline {
                 gitHome= tool name: 'gitJenkins', type: 'git'
                 }
             steps {
-               bat 'git push heroku master' 
+               sh 'git push heroku master' 
             }
         }
     }
