@@ -1,3 +1,4 @@
+package co.udea.heroes.api;
 import static org.junit.Assert.*;
 
 import org.junit.Test;

@@ -1,4 +1,4 @@
-package co.udea.proyecto.api;
+package co.udea.heroes.api;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.fail;
@@ -14,6 +14,7 @@ import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import co.udea.proyecto.api.ProyectoApiApplication;
 import co.udea.proyecto.api.model.Proyecto;
 import co.udea.proyecto.api.service.ProyectoService;
 
