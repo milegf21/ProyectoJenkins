@@ -27,9 +27,6 @@ pipeline {
                     //bat 'mvn sonar:sonar' 
                     echo 'Build'
                
-                   // withSonarQubeEnv('SonarQube') {
-                     // sh "${mvnHome}/bin/mvn sonar:sonar"
-                    //}
              
             }
         }
@@ -37,13 +34,15 @@ pipeline {
               
             steps {
                  echo 'Build'
-                  //  sh 'mvn deploy' 
+                  //  bat 'mvn deploy' 
             }
         }
         stage ('despliegue') {
+             environment {
+                gitHome= tool name: 'gitJenkins', type: 'git'
+                }
             steps {
-                   fileExists 'pom.xml'
-             
+               bat 'git push heroku master' 
             }
         }
     }
