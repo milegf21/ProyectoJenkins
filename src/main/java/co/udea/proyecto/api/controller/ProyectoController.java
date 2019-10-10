@@ -60,7 +60,7 @@ private static Logger log = LoggerFactory.getLogger(ProyectoController.class);
             @ApiResponse(code = 404, message = "Recurso no encontrado"),
             @ApiResponse(code = 500, message = "Error interno al procesar la respuesta")})
 	public ResponseEntity<List<DTOProyecto>> getProyecto( @PathVariable("estado") String estado){
-		 log.debug("REST request getProyecto estado : {}", estado);
+		 log.debug("REST request getProyecto estados : {}", estado);
 		return ResponseEntity.ok(proyectoMapper.ListAsProyectoDTO(proyectoService.searchProyectos2(estado)));
 	}
 	
