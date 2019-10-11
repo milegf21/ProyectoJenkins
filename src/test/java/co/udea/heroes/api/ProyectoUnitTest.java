@@ -36,6 +36,12 @@ public class ProyectoUnitTest {
 			
 			Assert.assertEquals("sprint9",proyectoPrueba.getNombre());
 		}
+		@Test
+		public void debeDarelProyecto2() {
+			Proyecto proyectoPrueba = proyectoService.getProyecto(1);
+			
+			Assert.assertEquals("sprint9",proyectoPrueba.getNombre());
+		}
 		
 		
 }
