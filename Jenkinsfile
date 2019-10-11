@@ -13,8 +13,8 @@ pipeline {
         }
         stage ('test') {
             steps {
-                    //echo 'Build'
-                     junit '**/target/surefire-reports/*.xml'
+                    echo 'Build'
+                     //junit '**/target/surefire-reports/*.xml'
              
             }
         }
