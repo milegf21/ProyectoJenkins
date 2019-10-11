@@ -30,17 +30,11 @@ pipeline {
              
             }
         }
-         stage ('repositorio de activos') {
+         stage ('repositorio de activos y despliegue') {
               
             steps {
                  echo 'Build'
-                  //  bat 'mvn deploy' 
-            }
-        }
-        stage ('despliegue') {
-             
-            steps {
-                 echo 'Build' 
+                  //  ejecucion con un proyecto maven  
             }
         }
     }
