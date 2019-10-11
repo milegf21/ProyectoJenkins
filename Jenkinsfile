@@ -13,8 +13,8 @@ pipeline {
         }
         stage ('test') {
             steps {
-                    echo 'Build'
-                     //junit '**/target/surefire-reports/*.xml'
+                    //echo 'Build'
+                     junit '**/target/surefire-reports/*.xml'
              
             }
         }
@@ -24,8 +24,8 @@ pipeline {
                  mvnHome = tool name: 'maven', type: 'maven'
                 }
             steps {
-                    //bat 'mvn sonar:sonar' 
-                    echo 'Build'
+                    bat 'mvn sonar:sonar' 
+                   // echo 'Build'
                
              
             }
@@ -38,9 +38,7 @@ pipeline {
             }
         }
         stage ('despliegue') {
-             environment {
-                gitHome= tool name: 'gitJenkins', type: 'git'
-                }
+             
             steps {
                  echo 'Build' 
             }
