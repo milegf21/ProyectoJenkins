@@ -24,25 +24,17 @@ pipeline {
                  mvnHome = tool name: 'maven', type: 'maven'
                 }
             steps {
-                    //bat 'mvn sonar:sonar' 
-                    echo 'Build'
+                    bat 'mvn sonar:sonar' 
+                   // echo 'Build'
                
              
             }
         }
-         stage ('repositorio de activos') {
+         stage ('repositorio de activos y despliegue') {
               
             steps {
                  echo 'Build'
-                  //  bat 'mvn deploy' 
-            }
-        }
-        stage ('despliegue') {
-             environment {
-                gitHome= tool name: 'gitJenkins', type: 'git'
-                }
-            steps {
-               sh 'git push heroku master' 
+                  //  ejecucion con un proyecto maven  
             }
         }
     }
